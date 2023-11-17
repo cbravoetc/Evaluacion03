@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesnombres.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Ejercicio 2</h1>
+    <form method="post" action="/ejercicio2">
+        <label> Nombre 1:</label>
+        <input type="text" name="nombre1" required>
+        <br>
+
+        <label> Nombre 2:</label>
+        <input type="text" name="nombre2" required>
+        <br>
+
+        <label> Nombre 3:</label>
+        <input type="text" name="nombre3" required>
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if nombre_mas_largo is defined and longitud is defined %}
+        <h2>Resultado</h2>
+        <p>El nombre con mayor cantidad de caracteres es: {{ nombre_mas_largo }}</p>
+        <p>El nombre tiene: {{ longitud }} caracteres</p>
+    {% endif %}
+</div>
+</body>
+</html>
